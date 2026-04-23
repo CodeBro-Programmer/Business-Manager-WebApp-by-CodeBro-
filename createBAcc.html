@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up Page</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+        <h1 class="page-title">Welcome To<br> SMART Business Manager</h1>
+    <section class="sign-up-form">
+        <div>
+            <h2 class="header">Create Business Account</h2>
+            <p class="content">Input Business Details</p>
+        </div>
+        
+        <!-- ABOUT BUSINESS -->
+        <article class="business-details" style="height: 100%; width:100%; border: none; display: flex; flex-direction: column; align-items: center; gap:10px; height: max content;">
+            <div class="info">
+            <label>Business Name:</label>
+            <input class="businessN" type="text" placeholder="input your business-name here">
+            <p class="error" id="BN-error"></p>
+        </div>
+        
+             <div class="info">
+            <label>Business Owner Name:</label>
+            <input class="BusinessOwnerN" type="text" placeholder="input your full-name here">
+            <p class="error" id="BOwnerN-error"></p>
+        </div>
+        
+        
+           <div class="info">
+            <label>Business Category:</label>
+            <input class="BusinessC" type="text" placeholder="input your Business category here">
+            <p class="error" id="BC-error"></p>
+        </div>
+        
+           <div class="info">
+            <label>About Business:</label>
+            <textarea class="about" placeholder="input about your business here here" style="height: 120px; display: flex; align-items: flex-start;"></textarea>
+            <p class="error" id="AB-error"></p>
+        </div>
+        
+           <div class="info">
+            <label>Business Address:</label>
+            <input class="BusinessA" type="text" placeholder="input your business address here">
+            <p class="error" id="BA-error"></p>
+        </div>
+        
+           <div class="info">
+            <label>Business Email:</label>
+            <input class="BusinessE" type="text" placeholder="input your business email here">
+            <p class="error" id="BE-error"></p>
+        </div>
+        
+           <div class="info">
+            <label>Business Number:</label>
+            <input class="BusinessN" type="number" placeholder="input your business number here">
+            <p class="error" id="BNu-error"></p>
+        </div>
+        
+         <div class="login-div">
+            <button class="login" id="Next">Next</button>
+        </div>
+        </article>
+        
+     <!-- OWNER DETAILS -->
+         <article class="Owner-details">
+             <div class="info">
+            <label>First Name</label>
+            <input class="firstN" type="text" placeholder="input your first-name here">
+            <p class="error" id="FN-error"></p>
+        </div>
+        
+        <div class="info">
+            <label>Last Name:</label>
+            <input class="lastN" type="text" placeholder="input your last-name here">
+            <p class="error" id="LN-error"></p>
+        </div>
+        
+        <div class="info">
+            <label>Age:</label>
+            <input class="Age" type="number" placeholder="input your age here">
+            <p class="error" id="age-error"></p>
+        </div>
+        
+        <div class="info">
+            <label>Gender:</label>
+            <input class="gender" type="text" placeholder="male/female">
+            <p class="error" id="gender-error"></p>
+        </div>
+        
+        <div class="info">
+            <label>State Of Origin:</label>
+            <input class="state" type="text" placeholder="input your State here">
+            <p class="error" id="state-error"></p>
+        </div>
+        
+        <div class="info">
+            <label>Email:</label>
+            <input class="email" type="email" placeholder="input your correct Email here">
+            <p class="error" id="email-error"></p>
+        </div>
+        
+        <div class="info">
+            <label>Phone Number:</label>
+            <input class="phoneNum" type="number" placeholder="input you last-name here">
+            <p class="error" id="PN-error"></p>
+        </div>
+        
+        <div class="info">
+            <label>Password:</label>
+            <input class="password" type="password" placeholder="input you password here">
+            <p class="error" id="pass-error"></p>
+        </div>
+        
+        <div class="info">
+            <label>Confirm Password:</label>
+            <input class="confirmPass" type="password" placeholder="confirm password here">
+            <p class="error" id="CP-error"></p>
+        </div>
+        
+         <div class="login-div">
+            <button title="Click to create an account" class="login" id="create">Create Account</button>
+        </div>
+         </article>
+         
+         <!-- DISMISS SECTION -->
+         <article class="dismiss-article">
+             <div class="login-div">
+            <button class="login" id="dismiss">Dismiss</button>
+        </div>
+         </article>
+         
+         
+    </section>
+    
+    <script src="createBAcc.js"></script>
+</body>
+</html>

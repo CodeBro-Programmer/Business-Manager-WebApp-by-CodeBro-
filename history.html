@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <link rel="stylesheet" href="history.css">
+</head>
+<body>
+    <header>
+        <div>
+            <p class="exit">E</p>
+        </div>
+        <div>
+             <h1 class="heading">HISTORY</h1>
+        </div>
+        <div>
+            <p class="filter">F</p>
+        </div>
+    </header>
+    <article class="body">
+    <section>
+        <div class="name-div">
+            <p class="name">Ella</p>
+            <p class="time">9:50 am</p>
+        </div>
+        <div class="description">
+            <p class="des-content">sold 3 units of antacid for amount</p>
+        </div>
+        <div class="date-div">
+            <p class="date">thursday 2/5/2026</p>
+        </div>
+    </section>
+    </article>
+
+
+    <script>
+       
+        document.addEventListener("DOMContentLoaded",()=>{
+            let renderH = JSON.parse(localStorage.getItem("history")) || [];
+            console.log(renderH);
+            let article = document.querySelector(".body");
+            renderH.reverse().forEach(e => {
+                
+                r = `<section>
+        <div class="name-div">
+            <p class="name">${e.hName}</p>
+            <p class="time">9:50 am</p>
+        </div>
+        <div class="description">
+            <p class="des-content">sold ${e.sellQuan} units of ${e.productName} for ${e.moneyMade}</p>
+        </div>
+        <div class="date-div">
+             <p class="date">thursday 2/5/2026</p>
+        </div>
+    </section>`
+    article.innerHTML += r;
+            });
+        })    
+    </script>
+</body>
+</html>

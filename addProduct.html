@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>Add Products with ease</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body id="addProductBody" style="margin: 0; padding: 0;">
+    <section class="Add-product-section">
+                 <div>
+                     <h1 class="add-p-header">ADD A NEW PRODUCT</h1>
+                 </div>
+                 
+                 
+                 <article id="Add-container">
+                 <div>
+                     <label class="label">Drug Name:</label>
+                     <input type="text" id="DName" class="add-p-input" placeholder="input the drug name here" required>
+                 </div>
+                 
+                 <div>
+                     <label class="label">Drug Price:</label>
+                     <input type="number" id="Dprice" class="add-p-input" placeholder="input the drug price here" required>
+                 </div>
+                 
+                  <div>
+                      <label class="label">Drug Quantity:</label>
+                     <input type="number" id="Dquantity" class="add-p-input" placeholder="input the drug quantity here" required>
+                  </div id="btn-div">     
+                  
+                  <div style="display:flex; justify-content: center; align-items: center;">
+                    <button class="add-p-btn">ADD PRODUCT</button>  
+                  </div>             
+                 </article>
+                 
+                 
+                 
+             </section>
+             
+             
+              <!-- ADDED PRODUCT SUCCESSFULLY ALERT -->
+             <section class="alert-add-succ">
+            <div class="mess">
+                <h1>✅</h1>
+                <h3>Product Added successfully</h3>
+              <div>
+                  <p class="successful-pInfo"></p>
+              </div>
+            </div>
+            <div class="Ok-div">
+                <button class="ok">OK</button>
+            </div>
+        </section>
+             
+         <section class="load-background">
+            <article class="load"></article>
+        </section>
+        </section>
+        
+             
+             <script src="script.js"></script>
+        
+</body>
+</html>

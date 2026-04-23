@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>Edit Products with ease</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+</head>
+<body id="addProductBody" style="margin: 0; padding: 0;">
+    <section class="Add-product-section">
+                 <div>
+                     <h1 class="add-p-header">
+                         <i class="fa-solid fa-pen-to-square"></i> EDIT PRODUCT
+                     </h1>
+                 </div>
+                 
+                 
+                 <article id="Add-container">
+                 <div>
+                     <label class="label">
+                         <i class="fa-solid fa-box"></i> Drug Name:
+                     </label>
+                     <input type="text" id="nam" class="add-p-input" placeholder="input the drug name here" required>
+                 </div>
+                 
+                 <div>
+                     <label class="label">
+                         <i class="fa-solid fa-naira-sign"></i> Drug Price:
+                     </label>
+                     <input type="number" id="pric" class="add-p-input" placeholder="input the drug price here" required>
+                 </div>
+                 
+                  <div>
+                      <label class="label">
+                          <i class="fa-solid fa-boxes-stacked"></i> Drug Quantity:
+                      </label>
+                     <input type="number" id="quan" class="add-p-input" placeholder="input the drug quantity here" required>
+                  </div>
+                  
+                  <div style="display:flex; justify-content: center; align-items: center;">
+                    <button class="add-p-btn">
+                        <i class="fa-solid fa-floppy-disk"></i> SAVE CHANGES
+                    </button>  
+                  </div>             
+                 </article>
+                 
+             </section>
+</body>
+</html>
+             
+              <!-- ADDED PRODUCT SUCCESSFULLY ALERT -->
+             <section class="alert-add-succ">
+            <div class="mess">
+                <h1>✅</h1>
+                <h3>Product Added successfully</h3>
+              <div>
+                  <p class="successful-pInfo"></p>
+              </div>
+            </div>
+            <div class="Ok-div">
+                <button class="ok">OK</button>
+            </div>
+        </section>
+             
+             
+             <section class="load-background">
+            <article class="load"></article>
+        </section>
+        
+             
+             <script>
+                 document.addEventListener("DOMContentLoaded",()=>{
+                 let param = new URLSearchParams(window.location.search);
+                 let index = param.get("index");
+                 
+                 let medicines = JSON.parse(localStorage.getItem("MedStored")) || [
+  { name: "Paracetamol", price: 500, quantity: 120 },
+  { name: "Ibuprofen", price: 800, quantity: 75 },
+  { name: "Amoxicillin", price: 1500, quantity: 50000 },
+  { name: "Cough Syrup", price: 1200, quantity: 25 },
+  { name: "Vitamin C", price: 600, quantity: 200 },
+  { name: "Antacid", price: 700, quantity: 60 },
+  { name: "Insulin", price: 5500, quantity: 15 },
+  { name: "Aspirin", price: 650, quantity: 90 }
+];
+
+
+                 let header = document.querySelector(".add-p-header");
+    let nameInput = document.querySelector("#nam");
+    let priceInput = document.querySelector("#pric");
+    let quanInput = document.querySelector("#quan");
+    let editBtn = document.querySelector(".add-p-btn");
+    
+    if(header && nameInput && priceInput &&  quanInput && editBtn ){
+    
+    nameInput.value = medicines[index].name;
+    priceInput.value = medicines[index].price;
+    quanInput.value = medicines[index].quantity;
+    
+    
+    editBtn.onclick = ()=>{
+        medicines[index].name = nameInput.value;
+        medicines[index].price = priceInput.value;
+        medicines[index].quantity = quanInput.value;
+        
+        localStorage.setItem("MedStored",JSON.stringify(medicines));
+        window.location.href = "inventory.html";
+    }
+    }
+    
+    
+                 })
+                 
+                 
+             </script>
+        
+</body>
+</html>

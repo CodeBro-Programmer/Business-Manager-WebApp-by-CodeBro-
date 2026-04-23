@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up Page</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+        <h1 class="page-title">Welcome To<br> SMART Business Manager</h1>
+    <section class="sign-up-form">
+        <div>
+            <h2>Sign Up</h2>
+        </div>
+        
+        <div class="info">
+            <label>First Name</label>
+            <input class="firstN" type="text" placeholder="input your first-name here">
+            <p class="error" id="FN-error"></p>
+        </div>
+        
+        <div class="info">
+            <label>Last Name:</label>
+            <input class="lastN" type="text" placeholder="input your last-name here">
+            <p class="error" id="LN-error"></p>
+        </div>
+        
+        <div class="info">
+            <label>Age:</label>
+            <input class="Age" type="number" placeholder="input your age here">
+            <p class="error" id="age-error"></p>
+        </div>
+        
+        <div class="info">
+            <label>Gender:</label>
+            <input class="gender" type="text" placeholder="male/female">
+            <p class="error" id="gender-error"></p>
+        </div>
+        
+        <div class="info">
+            <label>State Of Origin:</label>
+            <input class="state" type="text" placeholder="input your State here">
+            <p class="error" id="state-error"></p>
+        </div>
+        
+        <div class="info">
+            <label>Email:</label>
+            <input class="email" type="email" placeholder="input your correct Email here">
+            <p class="error" id="email-error"></p>
+        </div>
+        
+        <div class="info">
+            <label>Phone Number:</label>
+            <input class="phoneNum" type="number" placeholder="input you last-name here">
+            <p class="error" id="PN-error"></p>
+        </div>
+        
+        <div class="info">
+            <label>Password:</label>
+            <input class="password" type="password" placeholder="input you password here">
+            <p class="error" id="pass-error"></p>
+        </div>
+        
+        <div class="info">
+            <label>Confirm Password:</label>
+            <input class="confirmPass" type="password" placeholder="confirm password here">
+            <p class="error" id="CP-error"></p>
+        </div>
+        
+        <div class="login-div">
+            <button class="login" id="Sign-Up">Sign-up</button>
+        </div>
+        
+        <div class="signUp">
+            <p>Already have an account? <a href="index.html">Login</a></p>
+        </div>
+    </section>
+    
+    <script src="SignUp.js"></script>
+</body>
+</html>

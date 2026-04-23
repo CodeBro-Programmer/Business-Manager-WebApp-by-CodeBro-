@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #eef3f8, #d9e6f2);
+    font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+    position: relative;
+}
+
+/* --- Header --- */
+.page-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #4a6fa5; /* Dashboard primary color */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+/* --- Form Container --- */
+section{
+    height: 40%;
+    width: 75%;
+    border: 0.5px solid rgba(0,0,0,0.2);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    border-radius: 16px;
+    background: #ffffff;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* --- Info Section --- */
+section .info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 90%;
+    height: 20%;
+}
+
+/* --- Inputs --- */
+section input,textarea{
+    width: 100%;
+    height: 60%;
+    padding: 10px 12px;
+    border-radius: 14px;
+    margin-bottom: 3%;
+    outline: none;
+    border: 1.5px solid #ccc;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Input Focus */
+section input:focus{
+    border-color: #4a6fa5;
+    box-shadow: 0 0 6px rgba(74, 111, 165, 0.4);
+}
+
+section textarea:focus{
+    border-color: #4a6fa5;
+    box-shadow: 0 0 6px rgba(74, 111, 165, 0.4);
+}
+
+
+
+/* --- Login Button Container --- */
+.login-div,.dismiss-article{
+    height: 60px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+}
+
+/* --- Login Button --- */
+.login{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    background: linear-gradient(90deg, #2c3e50, #4a6fa5); /* Gradient button */
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    transition: all 0.2s ease;
+}
+
+.login:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* --- Sign-Up Section --- */
+.signUp{
+    margin-top: 5%;
+    font-size: 0.9rem;
+}
+
+.signUp a{
+    color: #4A90E2;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.signUp a:hover{
+    text-decoration: underline;
+}
+
+.sign-up-form{
+    height: 75%;
+}
+
+.error{
+    margin-top: -10px;
+    font-size: 0.8rem;
+    color: red;
+}
+
+
+/* CREATE ACCOUNT REDIRECTORY */
+.create-account-body{
+    display: none;
+}
+
+
+.create-account-body.create-acc{
+    position: fixed;
+    inset: 0;
+    height: 100vh;    
+    width: 100%;
+    border-radius: 0px;
+    background: linear-gradient(135deg, #eef3f8, #d9e6f2);
+}
+
+.create-acc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.create-acc article{
+    height: 25%;
+    width: 80%;
+    font-size:1.15rem;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: none;
+    border-radius: 15px;
+    color: black;
+    padding: 0px 20px;
+    border: 0.5px solid rgba(0,0,0,0.2);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    background: white;
+}
+
+.create-acc article div{
+    height: 25%;
+    width: 80%;
+}
+
+.create-acc article button{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    background: linear-gradient(90deg, #2c3e50, #4a6fa5); /* Gradient button */
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    transition: all 0.2s ease;
+}
+
+.create-acc article button:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+
+.Owner-details{
+    width:100%;  
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap:8px;
+}

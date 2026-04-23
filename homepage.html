@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy</title>
+    <!-- Font Awesome Free CDN -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="homepage-body">
+    <!-- HEADER WITH NAVBAR -->
+    <header>
+        <!-- Site title -->
+        <h1 class="header-title"><i class="fa-solid fa-house"></i> J.C Pharmaceuticals</h1>
+
+        <!-- Navbar -->
+        <nav class="header-nav">
+            <ul class="nav-list">
+                <!-- History / Sales -->
+                <li class="nav-item">
+                    <button class="nav-btn" id="history-btn">
+                        <i class="fa-solid fa-chart-line"></i> History
+                    </button>
+                </li>
+
+                
+
+                <!-- Login / Logout -->
+                <li class="nav-item">
+                    <button class="nav-btn" id="logout-btn">
+                        <i class="fa-solid fa-right-to-bracket"></i> Log-Out
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO / ADMIN PANEL -->
+    <hero class="admin-panel">
+        <section class="hero-header">
+            <div style="display:flex; flex-direction: column; align-items: flex-start;">
+                <h2 class="admin-title"><i class="fa-solid fa-user-shield"></i> WELCOME ADMIN</h2>
+            <p class="description"><i class="fa-solid fa-tachometer-alt"></i> Admin Panel</p>
+            </div>
+            <div>
+               <p id="currentTime"></p> 
+            </div>
+        </section>        
+        
+        <section class="admin-panel-icons">
+            <article class="total-products">
+                <h2 id="total-p-title"><i class="fa-solid fa-box"></i><br> TOTAL PRODUCTS</h2>
+                <p id="total-p-number">500 units</p>
+            </article>
+            
+            <article class="total-products-sold">
+                <h2 id="total-sold-p-title"><i class="fa-solid fa-chart-line"></i> <br>TOTAL SOLD PRODUCTS</h2>
+                <p id="total-sold-p-number"></p>
+            </article>
+            
+            <article class="total-profit-made">
+                <h2 id="total-profit-title"><i class="fa-solid fa-dollar-sign"></i> <br>REVENUE MADE</h2>
+                <section id="profit-matric">
+                    <div class="today">
+                        <label style="font-weight: bold; font-size: 14px;"><i class="fa-solid fa-calendar-day"></i> Today:</label>
+                        <p id="total-profit-today">0</p>
+                    </div>
+                    <div id="week">
+                        <label style="font-weight: bold; font-size: 14px;"><i class="fa-solid fa-calendar-week"></i> This Week</label>
+                        <p id="total-profit-week">$0</p>
+                    </div>
+                </section>
+            </article>
+        </section>
+        
+        <!-- ACTIONS -->
+        <section class="actions">
+            <article class="add-employee-cont">
+                <button id="add-empl"><i class="fa-solid fa-user-plus"></i> Approve<br>Employee</button>
+            </article>
+            
+            <article class="remove-employee-cont">
+                <button id="employees"><i class="fa-solid fa-user-minus"></i>Employees</button>
+            </article>
+            
+            <article class="add-product-cont">
+                <button id="add-pro"><i class="fa-solid fa-plus-circle"></i> Add<br>Product</button>
+            </article>
+            
+            <article class="inventory-cont">
+                <button id="inventory"><i class="fa-solid fa-warehouse"></i> Inventory</button>
+            </article>
+            
+            <!-- NOTIFICATION ICON -->
+                <article class="nav-item">
+                    <button class="nav-btn" id="lowQuantityAlert">
+                        <i class="fa-solid fa-bell"></i> Low Stock
+                    </button>
+                </article>
+        </section>
+    </hero>
+
+    <!-- MAIN SECTION -->
+    <main class="search">
+        <!-- SEARCH SECTION -->
+        <section class="search-section">
+            <input type="search" class="input" placeholder="Input A Product Name To Search" required>
+            <button id="search-btn"><i class="fa-solid fa-search"></i> SEARCH</button>
+        </section>
+        
+        <!-- SUGGESTIONS -->
+        <section class="sugg-container"></section>
+        
+        <!-- THE PRODUCT PROPERTY RENDERING SECTION -->
+        <section class="content">
+            <article class="container">
+                <label class="drug-name"><i class="fa-solid fa-capsules"></i> Name:</label>
+                <p class="title"></p> 
+            </article>
+            
+            <article class="container">
+                <label class="drug-price"><i class="fa-solid fa-dollar-sign"></i> Price:</label>
+                <p class="price"></p> 
+            </article>
+            
+            <article class="container">
+                <label class="drug-quantity"><i class="fa-solid fa-boxes-stacked"></i> Quantity:</label>
+                <p class="quantity"></p> 
+            </article>
+            
+            <article class="sell-input-cont" style="border: none; display: flex; flex-direction: column; align-items: center; margin-top: 6px;">
+                <div class="input-worth" style="display:flex; align-items:center; gap:5px; ">
+                    <input type="number" placeholder="Type in sell quantity" class="sell-input">
+                    <p class="worth">worth<br>5000</p>
+                </div>
+                
+                <button class="compl-sale-btn"><i class="fa-solid fa-cart-shopping"></i> COMPLETE SALE</button>
+            </article>
+        </section>
+        
+        <!-- SALE COMPLETED ALERT -->
+        <section class="alert">
+            <div class="mess">
+                <h1>✅</h1>
+                <h3>Sale Completed Successfully</h3>
+                <div>
+                    <p class="successful-pInfo"></p>
+                </div>
+            </div>
+            <div class="Ok-div">
+                <button class="ok"><i class="fa-solid fa-check"></i> OK</button>
+            </div>
+        </section>
+        
+        <!-- SUCCESS/LARGE LOADING-->
+        <section class="load-background">
+            <article class="load"></article>
+        </section>
+        
+        <!-- MINI LOADING -->
+        <article class="med-load"></article>
+        
+        
+        
+        <!-- NOTIFICATION DIV -->
+        <section id="notiCont">
+            <div class="notificationSec">
+                <article id="notif-head">
+                    <div>
+                        <h1><i class="fa-solid fa-bell"></i> Notifications</h1>   
+                    </div>
+                </article>
+                <button class="return"><i class="fa-solid fa-arrow-left"></i> Back</button> 
+                <div class="notiSect"></div>
+            </div>
+        </section> 
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
