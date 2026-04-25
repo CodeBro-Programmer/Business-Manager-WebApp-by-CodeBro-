@@ -9,7 +9,7 @@ if(loginBody){
 
 
 function run(){
-    let EmpRender =             JSON.parse(localStorage.getItem("employees")) || [];
+    let EmpRender = JSON.parse(localStorage.getItem("employees")) || [];
     
     if(EmpRender.length == 0){
         createAccountDirectory();
@@ -38,7 +38,7 @@ let correctName = true;
 let correctPass = true;
 let notFoundId = true;
 
-let totalEmp =             JSON.parse(localStorage.getItem("employees")) || [];
+let totalEmp = JSON.parse(localStorage.getItem("employees")) || [];
 
 
 function firstNameValidating(input,nameIndex){
