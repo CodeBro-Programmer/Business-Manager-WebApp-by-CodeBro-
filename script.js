@@ -653,15 +653,17 @@ if(approvedEmplBtn){
 }
 
 
-/* CHECKING IF USER 8S ADMIN OR EMPLOYEE */
+/* CHECKING IF USER IS ADMIN OR EMPLOYEE */
 function homepageDetailing(){
     let homepage = document.querySelector(".homepage-body");
+    
 
 if(homepage){
+    let renderEmplo = JSON.parse(localStorage.getItem("employees")) || [];
     let params = new URLSearchParams(window.location.search);
-    let role = params.get("role");
-    let name = params.get("name").toUpperCase();
-    let ID = params.get("id");
+    let indexE = params.get("empIndex");
+    let name = renderEmplo[indexE].firstName.toUpperCase();
+    let TheRole = renderEmplo[indexE].role;
     
     
     let welcomeMess = document.querySelector(".admin-title");
@@ -671,8 +673,8 @@ if(homepage){
     let searchBox = document.querySelector(".search");
     
     if(welcomeMess && description && icons && actionIcons && searchBox){
-         if(role == "employee"){
-            welcomeMess.textContent = `WELCOME ${name}`;
+         if(TheRole == "employee"){
+            welcomeMess.textContent = `WELCOME ${name} 🙂`;
             description.textContent = "";
             icons.innerHTML = "";
             icons.style.height = "max-content";
