@@ -36,46 +36,57 @@ function createAccountDirectory(){
  
 let correctName = true;
 let correctPass = true;
+let notFoundId = true;
 
 let totalEmp =             JSON.parse(localStorage.getItem("employees")) || [];
 
 
 function firstNameValidating(input,nameIndex){
+let errorFN = document.querySelector(".errorFirstN");
     if(input.value.trim().toLowerCase() === ""){
-            alert("input username to continue");
+            errorFN.textContent = "*Input first-name to continue...";
             correctName = false;
         }
         else if(input.value.trim().toLowerCase() !== totalEmp[nameIndex].firstName){
-            alert("Invalid username");
+            errorFN.textContent = "*This first-name is incorrect...";
             correctName = false;
         }
         else{
+            errorFN.innerHTML = "";
             correctName = true;
         }
 }
 
 function passValidating(pasInput,passIndex){
+let errorPas = document.querySelector(".errorPass");
     if(pasInput.value.trim().toLowerCase() === ""){
-            alert("Input password to continue.. ");
+            errorPas.textContent = "*Input password to continue.. ";
             correctPass = false;
         }
         else if(pasInput.value.trim().toLowerCase() !== totalEmp[passIndex].password){
-            alert("Invalid password!");
+            errorPas.textContent = "*Incorrect password...";
             correctPass = false;
         }
         else{
+            errorPas.innerHTML = "";
             correctPass = true;
         }
 }
 
 /* LOGIN FUNCTIONALITY */
+let errIdP = document.querySelector(".errorId");
+
+
 function authenticating(){
     
     let userId = document.querySelector(".user-id");
     let userName = document.querySelector(".user-name");
     let userPass = document.querySelector(".user-pass");
     
+    
     totalEmp.forEach(a =>{if(userId.value.trim() == a.id ){
+        notFoundId = false;
+        errIdP.innerHTML = "";
         let index = totalEmp.findIndex(user => user.id === userId.value.trim());
         
        /* USERNAME AUTHENTICATION */ 
@@ -95,13 +106,13 @@ function authenticating(){
                 },3000);
                 
                 setTimeout(()=>{
-                    window.location.href = `homepage.html?name=${userName.value.toLowerCase()}&id=${userId.value.toLowerCase()}&role=${a.role}`;
+                    window.location.href = `homepage.html?empIndex=${index}`;
                 },5000);
                 
             }
         }
+        }
          /* end */
-      }
       
     
     })
@@ -112,6 +123,7 @@ function authenticating(){
 
 
 let loginBtn = document.querySelector(".login");
+let clicked = true;
 
 if(loginBtn){
     loginBtn.onclick = ()=>{
@@ -121,19 +133,16 @@ if(loginBtn){
     
         
         if(usId.value === ""){
-            alert("input Id to continue...");
+            errIdP.textContent = "*Input Id to continue...";
             return;
         }
         
         
-        if(exists && usId != ""){
+        if(clicked === true){
             authenticating();
-            
-        }
-        else{
-            alert("USER NOT FOUND!");
-            console.log(totalEmp);
-            return;
+            if(notFoundId){
+                errIdP.textContent = "*Account with Id does not Exist!";
+            }
             
         }
     }
